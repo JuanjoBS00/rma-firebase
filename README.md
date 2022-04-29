@@ -1,27 +1,19 @@
-# RmadridFirebase
+# Rma-Firebase
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.3.
+Este proyecto tiene la principal finalidad de crear una aplicación mediante el uso del framework Angular, la cual gestiona la plantilla de jugadores de un equipo deportivo, en este caso el Real Madrid CF. Igualmente, otro objetivo fundamental de este trabajo, es que la información sea accedida a través de una base de datos en Firebase (tipo Realtime) y que se realicen las operaciones de: Crear, Leer, Actualizar y Borrar (CRUD). En este caso, dichas operaciones se realizarán sobre los jugadores de la plantilla.
 
-## Development server
+Para el desarrollo de esta aplicación, se ha partido de una previamente creada, la cual se encuentra en el repositorio de esta misma cuenta "rma-handler". Dicha aplicación se ha adaptado, de tal forma que los datos no sean accedidos desde variables locales existentes sino desde una base de datos real Firebase. 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Los componentes existentes son prácticamente similares a la anterior aplicación. Existen algunos componentes comúnes para todos los usuarios (forgot-password, login y not-found). Asimismo, se han realizado pequeñas modificaciones en componentes existentes pertenecientes a los usuarios administradores (about, footer, header, home, players, create-player, modify-player, player-detail, etc). En esta nueva aplicación, se ha creado un nuevo componente (remove-player-msg) el cual se encarga de mostrar un mensaje de confirmación cada vez que un jugador sea eliminado de la plantilla.
 
-## Code scaffolding
+En este proyecto, se hace uso de  del anidamiento entre componentes, enrutamiento (donde se administra la carga de componentes dependiendo de su uso gracias al empleo del lazy-loading), navegación y servicios (auth.service y database.service). En la versión anterior de la aplicación, existía un servicio por operación disponible, mientras que ahora todas estas operaciones a realizar en la base de datos Firebase son gestionadas por un único servicio (database.service).
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Los datos de acceso para la administración de la aplicación son los siguientes:
 
-## Build
+-Usuario: florentinoperrod@gmail.com
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+-Contraseña: tranquilo
 
-## Running unit tests
+Enlace de la aplicación desplegada: https://juanjobs00.github.io/rma-firebase/login
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+¡Espero que te guste!
