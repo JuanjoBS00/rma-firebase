@@ -1,0 +1,38 @@
+<div class="form_layout">
+    <h3>Añada un nuevo fichaje del Real Madrid</h3>
+      <table class="example-full-width" cellspacing="0"><tr>
+      <td><mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Nombre</mat-label>
+        <input matInput [(ngModel)]="player.nombre" name="nombre">
+      </mat-form-field></td>
+      <td><mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Apellidos</mat-label>
+        <input matInput [(ngModel)]="player.apellidos" name="apellidos">
+      </mat-form-field></td>
+    </tr></table>
+  
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Posicion</mat-label>
+        <input matInput [(ngModel)]="player.posicion" name="posicion">
+      </mat-form-field>
+  
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Goles</mat-label>
+      <input matInput [(ngModel)]="player.goles" name="goles">
+    </mat-form-field>
+  
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Asistencias</mat-label>
+      <input matInput [(ngModel)]="player.asistencias" name="asistencias"> 
+    </mat-form-field>
+  
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Edad</mat-label>
+      <input matInput [(ngModel)]="player.edad" name="edad">
+    </mat-form-field>
+  
+    <div id="send_button">
+      <button mat-raised-button color="accent" (click)="addPlayer()" >Fichar jugador</button>
+    </div>
+    
+  </div>

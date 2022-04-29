@@ -1,0 +1,32 @@
+<div class="container vh-100">
+    <div class="row justify-content-center h-100">
+        <div class="card my-auto shadow">
+            <div class="card-body px-5">
+                <div class="text-center">
+                    <img class="img_logo" title="Real Madrid Logo" alt="Real Madrid Logo" src="./assets/escudo.jpg">
+                </div>
+                <div class="text-center">
+                    <h2>¡Bienvenido!</h2>
+                </div>
+                <p style="color: lightslategray; text-align: center;">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Introduzca sus credenciales de acceso&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                    <div class="form-group">
+                        <input type="email" id="email" placeholder="Email" class="form-control" formControlName="email"
+                            name="email" />
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <input type="password" id="password" placeholder="Contraseña" class="form-control"
+                            formControlName="password" name="password" />
+                    </div>
+                    <br>
+                    <input type="submit" class="btn btn-primary w-100" value="Iniciar Sesión" name="">
+                </form>
+            </div>
+            <div class="card-footer text-right">
+                <small><a routerLink="../forgot-password">He olvidado la contraseña</a></small>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,79 @@
+<app-player-detail *ngIf ="idChosen > -1" [id]="idChosen" (flag) = "closeDetails($event)"></app-player-detail>
+
+<h2 *ngIf ="idChosen == -1">La lista de jugadores del primer equipo del Real Madrid es la siguiente</h2>
+
+<div id="table_background">
+  
+    <table *ngIf ="idChosen == -1" id="table" [dataSource]= "playerlist" mat-table class="mat-elevation-z8">
+    
+      <!-- Id Column -->
+    <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> Id </th>
+        <td mat-cell *matCellDef="let player"> {{player.id}} </td>
+    </ng-container>
+    
+    <!-- Nombre Column -->
+    <ng-container matColumnDef="nombre">
+      <th mat-header-cell *matHeaderCellDef> Nombre </th>
+      <td mat-cell *matCellDef="let player"> {{player.nombre}} </td>
+    </ng-container>
+  
+    <!-- Apellidos Column -->
+    <ng-container matColumnDef="apellidos">
+      <th mat-header-cell *matHeaderCellDef> Apellidos</th>
+      <td mat-cell *matCellDef="let player"> {{player.apellidos}} </td>
+    </ng-container>
+  
+    <!-- Posicion Column -->
+    <ng-container matColumnDef="posicion">
+      <th mat-header-cell *matHeaderCellDef> Posicion</th>
+      <td mat-cell *matCellDef="let player"> {{player.posicion}} </td>
+    </ng-container>
+  
+    <!-- Goles Column -->
+    <ng-container matColumnDef="goles">
+      <th mat-header-cell *matHeaderCellDef> Goles </th>
+      <td mat-cell *matCellDef="let player"> {{player.goles}} </td>
+    </ng-container>
+  
+    <!-- Asistencias Column -->
+    <ng-container matColumnDef="asistencias">
+      <th mat-header-cell *matHeaderCellDef> Asistencias</th>
+      <td mat-cell *matCellDef="let player"> {{player.asistencias}} </td>
+    </ng-container>
+  
+    <!-- Edad Column -->
+    <ng-container matColumnDef="edad">
+      <th mat-header-cell *matHeaderCellDef> Edad</th>
+      <td mat-cell *matCellDef="let player"> {{player.edad}} </td>
+    </ng-container>
+
+    <!-- View Detail Column -->
+    <ng-container matColumnDef="detalles">
+        <th mat-header-cell *matHeaderCellDef>Ver detalles</th>
+        <td mat-cell *matCellDef="let player"> <button mat-raised-button color="accent" (click)="watchPlayerDetails(player.id)">Ver detalles</button> </td>
+    </ng-container>
+  
+    <!-- Edit Column -->
+    <ng-container matColumnDef="editar">
+        <th mat-header-cell *matHeaderCellDef> Editar</th>
+        <td mat-cell *matCellDef="let player"> <button mat-raised-button color="accent" (click)="updatePlayer(player.id)">Editar</button> </td>
+    </ng-container>
+  
+    <!-- Delete Column -->
+    <ng-container matColumnDef="eliminar">
+        <th mat-header-cell *matHeaderCellDef> Eliminar</th>
+        <td mat-cell *matCellDef="let player"> <button mat-raised-button color="warn" (click)="removePlayer(player.id)">Eliminar</button> </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="tableColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: tableColumns;"></tr>
+    </table>
+  
+  </div>
+
+  <br><h2>¿Desea fichar un nuevo jugador? Hágalo aquí</h2><br>
+  <div class="add_player_div">
+    <button id ="add_player" mat-raised-button color="primary" (click)="createPlayer()">Ir a fichar jugador</button>
+  </div>
+  
